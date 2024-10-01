@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/e6ff62b84e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Elite Movies</title>
+  </head>
+  <body>
+    <nav>
+      <div class="row">
+        <div class="menu" style="display: none">
+          <ul>
+            <li class="menu__text">Home</li>
+            <li class="menu__text">Find Movies</li>
+            <li class="menu__text">Contact</li>
+          </ul>
+          <button onclick="closeMenu()">
+            <i class="exit fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="links__container">
+          <div class="logo__wrapper">
+            <img class="logo" src="assets/logo.png" alt="" />
+          </div>
+          <button
+            style="background-color: transparent; border: none"
+            onclick="openMenu()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="links__wrapper">
+            <a class="link" href="">Home</a>
+            <a class="link" href="">Find Movies</a>
+            <a class="link" href="">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="search__container">
+        <h2 class="search__header">Browse Movies</h2>
+        <div class="search__bar--wrapper">
+          <input
+            type="text"
+            name=""
+            class="search__bar"
+            placeholder="search here"
+            id="search"
+          />
+          <button>
+            <i
+              id="search__button"
+              class="fa-brands fa-searchengin"
+              onclick="fetchMovieData()"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="movies__display--container">
+      <div id="default" class="movies__display--default">
+        <img id="default__img" class="movie__img" src="./movie.svg" alt="" />
+        <img
+          id="error__img--nf"
+          class="movie__img"
+          src="./not-found.svg"
+          alt=""
+        />
+        <img
+          id="error__img--tm"
+          class="movie__img"
+          src="./search-again.svg"
+          alt=""
+        />
+        <h3 id="search__results--text" class="default__text">
+          search to display <span class="red">movies</span>
+        </h3>
+      </div>
+      <div id="movies" class="movies__display" style="display: none"></div>
+    </div>
+  </body>
+</html>
