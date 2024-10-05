@@ -19,7 +19,7 @@ async function fetchMovieData() {
   
   const encodedSearch = encodeURIComponent(search)
   console.log(encodedSearch)
-  const search_string = `http://www.omdbapi.com/?i=tt3896198&apikey=421fadc&s=${encodedSearch}`
+  const search_string = `https://www.omdbapi.com/?i=tt3896198&apikey=421fadc&s=${encodedSearch}`
 
   const response = await fetch(search_string) 
   let movies = await response.json()
